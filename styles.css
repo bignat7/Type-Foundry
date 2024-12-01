@@ -1,91 +1,225 @@
-/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue: #1656A4;
+  --primarywhite: rgba(255, 255, 255, 0.8);
+  --secondarywhite: rgba(255, 255, 255, 0.24);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "Shard";
+  src: url("Shard.ttf");
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic', sans-serif;
-    overflow-x: hidden;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-    padding: 10px;
-    color: antiquewhite;
-    z-index: 1000;
-    bottom: 0;
-    position: sticky;
-    backdrop-filter: blur(10px);
-  }
-  
-  .nav-left,
-  .nav-right {
-    display: flex;
-    gap: 60px;
-  }
-  
-  .nav-item:hover {
-    text-shadow: 0 0 5px antiquewhite, 0 0 10px antiquewhite;
-  }
-  
-  .scroll-container {
-    display: flex;
-    flex-direction: row;
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-  }
-  
-  section {
-    min-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    scroll-snap-align: start;
-  }
-  
-  p {
-    font-size: 20px;
-  }
-  
-  .typefaces-page {
-    background-color: #1656a4;
-    color: antiquewhite;
-  }
+  font-family: Arial, sans-serif;
+  font-variation-settings: "CURV" 0;
+  background-color: var(--blue);
+}
 
-  .readings-page {
-    background-color: antiquewhite;
-    color: #1656a4;
-  }
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: transparent;
+  padding: 20px;
+  gap: 20px;
+  width: 100%;
+}
 
-  .about-us-page {
-    background-color: #1656a4;
-    color: antiquewhite;
-  }
+ul {
+  list-style-type: none;
+  overflow: hidden;
+}
 
-  .footer {
-    position: relative;
-    bottom: 0;
-    background-color: rgba(250, 235, 215, 0.5);
-    width: 70%;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footer h1 {
-    font-size: 100px;
-    margin: 0;
-  }
-  
-  .footer a {
-    text-decoration: none;
-    color: antiquewhite;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
-  
+.navbutton {
+  color: var(--blue);
+  text-decoration: none;
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 15px;
+  display: block;
+  float: right;
+  background-image: url('iceberg button.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.navbutton:hover {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.navbuttonactive {
+  text-decoration: none;
+  color: var(--blue);
+  padding: 8px 15px;
+  text-align: center;
+  font-size: 15px;
+  display: block;
+  background-image: url('iceberg button.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.typefacesnavcontainer {
+  display: flex;
+  flex-direction: row; /* Arrange items horizontally */
+  width: 100%;
+}
+
+#typefacesnav {
+  position: fixed;
+  margin: 20px;
+  top: 0;
+  left: 0;
+  width: 580px;
+  transform: translateX(-110%); /* ChatGPT helped with this transition */
+  transition: transform 0.3s ease;
+  z-index: 10;
+  height: 95%;
+  background-image: url('iceberg nav.svg');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 25px;
+}
+
+#typefacesnav.visible {
+  transform: translateX(0);
+}
+
+.typefacesnavtypefaces {
+  overflow-y: auto;
+  max-height: calc(100% - 50px);
+  width: 83%;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 8;
+  overflow-y: auto;
+  backdrop-filter: blur(5px);
+}
+
+#overlay.visible {
+  opacity: 1;
+  pointer-events: auto; /* ChatGPT debugged this */
+}
+
+.typefacesbutton {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 50px;
+  padding: 20px 20px;
+  border-bottom: 0.5px solid var(--primarywhite);
+  color: var(--primarywhite);
+}
+
+.typefacesbutton:hover {
+  background-color: var(--primarywhite);
+  color: var(--blue);
+}
+
+/* ChatGPT helped debug this */
+.typeface-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+/* ChatGPT helped debug this */
+.font-masters {
+  font-size: 18px;
+  color: var(--blue);
+  opacity: 0;
+  margin-left: auto;
+}
+
+.typefacesbutton:hover .font-masters {
+  opacity: 1;
+}
+
+.typefacesbutton:hover .font-masters:hover {
+  text-shadow: 1px 1px 5px #1656a497;
+}
+
+.typeface-item:hover a:hover{
+  text-shadow: 1px 1px 10px #1960b797;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.typeface-details {
+  display: none;
+  position: fixed;
+  z-index: 9;
+  flex: 1;
+  justify-content: right;
+  align-items: right;
+  margin: 20px;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  height: calc(100% - 50px);
+  width: 60%;
+}
+
+.typeface-details #typefaceContent {
+  color: var(--primarywhite);
+  padding: 30px;
+  text-align: left;
+  justify-content: right;
+  align-items: right;
+  overflow-y: auto;
+  max-height: calc(100% - 50px);
+  width: 83%;
+}
+
+.typeface-details button {
+  background-color: var(--primarywhite);
+  color: var(--blue);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.typeface-details button:hover {
+  background-color: var(--blue);
+  color: var(--primarywhite);
+}
