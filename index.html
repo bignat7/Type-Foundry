@@ -10,30 +10,31 @@
 
 <body>
   <ul class="navbar">
-    <li style="margin-right: auto;"><button class="navbutton" onclick="toggleTypefaces()">Typefaces</button></li>
+    <li style="margin-right: auto;"><a href="index.html" class="navbutton">Home</a></li>
+    <li><button class="navbutton" onclick="toggleTypefaces()">Typefaces</button></li>
     <li><a href="Resources/index.html" class="navbutton">Resources</a></li>
     <li><a href="About Us/index.html" class="navbutton">About Tundra Type</a></li>
   </ul>
-
   <div id="overlay"></div>
+
+
 
   <div class="typefacesnavcontainer">
     <div id="typefacesnav">
       <ul class="typefacesnavtypefaces">
-        <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);"
-          onclick="showTypefaceDetails('Glacier')">
+        <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);" onclick="toggleTypefaces()">
           <div class="typeface-item">
             <span>Glacier</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
-        <li class="typefacesbutton" onclick="showTypefaceDetails('Shard')">
+        <li class="typefacesbutton" onclick="toggleTypefaces()">
           <div class="typeface-item">
             <span>Shard</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
-        <li class="typefacesbutton" onclick="showTypefaceDetails('Altitude')">
+        <li class="typefacesbutton" onclick="toggleTypefaces()">
           <div class="typeface-item">
             <span>Altitude</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
@@ -51,33 +52,23 @@
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
-        <li class="typefacesbutton">
-          <div class="typeface-item">
-            <span>Typeface 6</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
-          </div>
-        </li>
-        <li class="typefacesbutton">
-          <div class="typeface-item">
-            <span>Typeface 7</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
-          </div>
-        </li>
       </ul>
-    </div>
-
-    <div id="typefaceDetails" class="typeface-details">
-      <div id="typefaceContent">
-        <h1 id="typefaceTitle"></h1>
-        <p id="typefaceDescription">This is filler text for the chosen typeface.</p>
-        <button onclick="closeTypefaceDetails()">Close</button>
-      </div>
     </div>
   </div>
 
+  <div class="canvas-interactive-wrapper">
+    <canvas id="canvas-interactive"></canvas>
+    <div class="cta-wrapper">
+    </div>
+  </div>
 
+  <img src="images/tundra background.png" class="fade-in-bg" ;>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="script.js"></script>
 </body>
+
+
 
 </html>

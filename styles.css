@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Shard";
-  src: url("Shard.ttf");
+  src: url("fonts/Shard.ttf");
 }
 
 body {
@@ -33,6 +33,7 @@ body {
   padding: 20px;
   gap: 20px;
   width: 100%;
+  z-index: 10;
 }
 
 ul {
@@ -53,7 +54,7 @@ a {
   font-size: 15px;
   display: block;
   float: right;
-  background-image: url('iceberg button.svg');
+  background-image: url('images/iceberg button.svg');
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.5;
@@ -72,7 +73,7 @@ a {
   text-align: center;
   font-size: 15px;
   display: block;
-  background-image: url('iceberg button.svg');
+  background-image: url('images/iceberg button.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -91,10 +92,11 @@ a {
   width: 580px;
   transform: translateX(-110%); /* ChatGPT helped with this transition */
   transition: transform 0.3s ease;
-  z-index: 10;
+  z-index: 100;
   height: 95%;
-  background-image: url('iceberg nav.svg');
+  background-image: url('images/iceberg nav.svg');
   background-repeat: no-repeat;
+  background-size: 100% auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -122,9 +124,10 @@ a {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  z-index: 8;
+  z-index: 99;
   overflow-y: auto;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 #overlay.visible {
@@ -188,7 +191,6 @@ button {
   display: none;
   position: fixed;
   z-index: 9;
-  flex: 1;
   justify-content: right;
   align-items: right;
   margin: 20px;
@@ -196,7 +198,9 @@ button {
   right: 0;
   overflow: hidden;
   height: calc(100% - 50px);
-  width: 60%;
+  background-image: url('images/iceberg nav.svg');
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .typeface-details #typefaceContent {
@@ -207,7 +211,6 @@ button {
   align-items: right;
   overflow-y: auto;
   max-height: calc(100% - 50px);
-  width: 83%;
 }
 
 .typeface-details button {
@@ -222,4 +225,60 @@ button {
 .typeface-details button:hover {
   background-color: var(--blue);
   color: var(--primarywhite);
+}
+
+.canvas-interactive-wrapper {
+  position: fixed;
+  height: 100%;
+  text-align: center;
+}
+
+.canvas-interactive-wrapper canvas {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.canvas-interactive-wrapper .cta-wrapper {
+  margin-top: 130px;
+}
+
+.canvas-interactive-wrapper .cta-wrapper a {
+  position: relative;
+  display: inline-block;
+  padding: 3px 7px;
+  border: solid 1px transparent;
+  margin-right: 50px;
+  z-index: 1;
+  text-decoration: none;
+  color: #222;
+  transition: border .3s;
+}
+
+.canvas-interactive-wrapper .cta-wrapper a.active {
+  border-color: #222;
+}
+
+.fade-in-bg {
+  z-index: 1; 
+  position: fixed; 
+  width: 100%; 
+  height: 100%; 
+  margin-top: -10px;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
 }
