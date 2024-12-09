@@ -340,6 +340,10 @@ h2 {
     font-size: 14px; 
   }
 
+  .navbar {
+    flex-direction: column;
+  }
+
   .typefacesbutton {
     font-size: 20px; 
     padding: 10px;
