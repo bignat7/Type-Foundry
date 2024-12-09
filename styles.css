@@ -96,7 +96,6 @@ a {
   height: 95%;
   background-image: url('images/iceberg nav.svg');
   background-repeat: no-repeat;
-  background-size: 100% auto;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -161,6 +160,11 @@ a {
   align-items: center;
 }
 
+
+.typeface-title:hover {
+  text-shadow: 1px 1px 8px #1656a497;
+}
+
 /* ChatGPT helped debug this */
 .font-masters {
   font-size: 18px;
@@ -177,54 +181,10 @@ a {
   text-shadow: 1px 1px 5px #1656a497;
 }
 
-.typeface-item:hover a:hover{
-  text-shadow: 1px 1px 10px #1960b797;
-}
-
 button {
   border: none;
   text-decoration: none;
   background-color: transparent;
-}
-
-.typeface-details {
-  display: none;
-  position: fixed;
-  z-index: 9;
-  justify-content: right;
-  align-items: right;
-  margin: 20px;
-  top: 0;
-  right: 0;
-  overflow: hidden;
-  height: calc(100% - 50px);
-  background-image: url('images/iceberg nav.svg');
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.typeface-details #typefaceContent {
-  color: var(--primarywhite);
-  padding: 30px;
-  text-align: left;
-  justify-content: right;
-  align-items: right;
-  overflow-y: auto;
-  max-height: calc(100% - 50px);
-}
-
-.typeface-details button {
-  background-color: var(--primarywhite);
-  color: var(--blue);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.typeface-details button:hover {
-  background-color: var(--blue);
-  color: var(--primarywhite);
 }
 
 .canvas-interactive-wrapper {
@@ -265,13 +225,14 @@ button {
   border-color: #222;
 }
 
-.fade-in-bg {
+.landingbg {
   z-index: 1; 
-  position: fixed; 
-  width: 100%; 
-  height: 100%; 
+  position: absolute; 
+  width: 100%;  
   margin-top: -10px;
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 2s ease-in;
+  justify-self: center;
+  transition: filter 0.2s ease;
 }
 
 @keyframes fadeIn {
@@ -287,7 +248,7 @@ button {
   0% {
     filter: blur(0px);
   }
-  70% {
+  80% {
     filter: blur(0px);
   }
   100% {
@@ -306,4 +267,41 @@ button {
   font-size: 15px;
   filter: blur(50px);
   animation: fadeOut 3s ease-in;
+}
+
+#GlacierDetails {
+  position: absolute;
+  z-index: 70;
+  padding: 90px;
+  margin: 20px;
+  display: none;
+  background-image: url('images/tundra details.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: calc(100% - 40px);
+  height: 200%;
+}
+
+.glaciercontent {
+  color: var(--primarywhite);
+  width: 100%;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 50px;
+}
+
+@media (max-width: 800px) {
+  #GlacierDetails {
+    padding: 60px;
+  }
+
+}
+
+@media (max-width: 500px) {
+  #typefacesnav {
+  width: 580px;
+  height: 70%;
+}
 }

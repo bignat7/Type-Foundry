@@ -22,33 +22,33 @@
   <div class="typefacesnavcontainer">
     <div id="typefacesnav">
       <ul class="typefacesnavtypefaces">
-        <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);" onclick="toggleTypefaces()">
+        <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);" onclick="handleTypefaceClick('Glacier')">
           <div class="typeface-item">
-            <span>Glacier</span>
+            <span class="typeface-title" id="Glacier">Glacier</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton" onclick="toggleTypefaces()">
           <div class="typeface-item">
-            <span>Shard</span>
+            <span class="typeface-title">Shard</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton" onclick="toggleTypefaces()">
           <div class="typeface-item">
-            <span>Altitude</span>
+            <span class="typeface-title">Altitude</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton">
           <div class="typeface-item">
-            <span>Metropolis</span>
+            <span class="typeface-title">Drafty</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton">
           <div class="typeface-item">
-            <span>Shear</span>
+            <span class="typeface-title">Shear</span>
             <span class="font-masters">2 axes <br> 4 Font Masters</span>
           </div>
         </li>
@@ -61,10 +61,21 @@
     <div class="cta-wrapper">
     </div>
   </div>
-  <img src="images/tundra background.png" class="fade-in-bg">
+  <img src="images/tundra background 2.png" class="landingbg" id="landingbg">
 
   <div class="landingtext">
     welcome to the tundra.
+  </div>
+
+  <div id="GlacierDetails">
+    <div class="glaciercontent">
+      <div style="display: flex; grid-template-columns: 1fr 1fr; justify-content: space-between;">
+        <p>go back</p>
+        <p>next typeface</p>
+      </div>
+      <h2>Glacier</h2>
+      <p>some info here</p>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
