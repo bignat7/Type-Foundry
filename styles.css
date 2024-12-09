@@ -80,7 +80,8 @@ a {
 
 .typefacesnavcontainer {
   display: flex;
-  flex-direction: row; /* Arrange items horizontally */
+  flex-direction: row;
+  /* Arrange items horizontally */
   width: 100%;
 }
 
@@ -90,7 +91,8 @@ a {
   top: 0;
   left: 0;
   width: 580px;
-  transform: translateX(-110%); /* ChatGPT helped with this transition */
+  transform: translateX(-110%);
+  /* ChatGPT helped with this transition */
   transition: transform 0.3s ease;
   z-index: 100;
   height: 95%;
@@ -131,7 +133,8 @@ a {
 
 #overlay.visible {
   opacity: 1;
-  pointer-events: auto; /* ChatGPT debugged this */
+  pointer-events: auto;
+  /* ChatGPT debugged this */
 }
 
 .typefacesbutton {
@@ -226,9 +229,9 @@ button {
 }
 
 .landingbg {
-  z-index: 1; 
-  position: absolute; 
-  width: 100%;  
+  z-index: 1;
+  position: absolute;
+  width: 100%;
   margin-top: -10px;
   animation: fadeIn 2s ease-in;
   justify-self: center;
@@ -239,6 +242,7 @@ button {
   0% {
     filter: blur(5px);
   }
+
   100% {
     filter: blur(0px);
   }
@@ -248,9 +252,11 @@ button {
   0% {
     filter: blur(0px);
   }
+
   80% {
     filter: blur(0px);
   }
+
   100% {
     filter: blur(50px);
   }
@@ -293,15 +299,68 @@ h2 {
 }
 
 @media (max-width: 800px) {
-  #GlacierDetails {
-    padding: 60px;
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
 
+  .navbutton {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  #typefacesnav {
+    width: 90%; 
+    height: auto; 
+  }
+
+  .typefacesbutton {
+    font-size: 30px; 
+    padding: 15px; 
+  }
+
+  .font-masters {
+    font-size: 12px; 
+  }
+
+  #GlacierDetails {
+    padding: 20px;
+    height: auto;
+    background-size: cover;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
 }
 
 @media (max-width: 500px) {
-  #typefacesnav {
-  width: 580px;
-  height: 70%;
-}
+  body {
+    font-size: 14px; 
+  }
+
+  .typefacesbutton {
+    font-size: 20px; 
+    padding: 10px;
+  }
+
+  .font-masters {
+    font-size: 10px;
+  }
+
+  #GlacierDetails {
+    padding: 10px;
+    height: auto;
+    background-size: cover;
+  }
+
+  .landingtext {
+    font-size: 12px; 
+  }
+
+  .canvas-interactive-wrapper .cta-wrapper a {
+    font-size: 12px;
+    margin-right: 20px;
+  }
 }
