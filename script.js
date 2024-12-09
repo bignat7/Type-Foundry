@@ -91,3 +91,18 @@ function applyGlacierDetails() {
 
   GlacierDetails.style.display = 'block'; 
 }
+
+// type tester
+var currentVariable = document.querySelector('#current-PEAK');
+function setVariable(newVariable) {
+    console.log(newVariable);
+    currentVariable.innerText = newVariable;
+    root.style.setProperty('--PEAK', newVariable);
+}
+
+var currentFontSize = document.querySelector('#current-font-size');
+function setFontSize(newFontSize) {
+    console.log(newFontSize);
+    currentFontSize.innerText = newFontSize;
+    root.style.setProperty('--font-size', newFontSize + "px");
+}

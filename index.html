@@ -22,34 +22,29 @@
   <div class="typefacesnavcontainer">
     <div id="typefacesnav">
       <ul class="typefacesnavtypefaces">
-        <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);" onclick="handleTypefaceClick('Glacier')">
+        <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);"
+          onclick="handleTypefaceClick('Glacier')">
           <div class="typeface-item">
             <span class="typeface-title" id="Glacier">Glacier</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
+            <span class="font-masters">2 Variable Axes <br> 4 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton" onclick="toggleTypefaces()">
           <div class="typeface-item">
-            <span class="typeface-title">Shard</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
+            <span class="typeface-title" id="Shard">Shard</span>
+            <span class="font-masters">1 Variable Axis <br> 2 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton" onclick="toggleTypefaces()">
           <div class="typeface-item">
-            <span class="typeface-title">Altitude</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
+            <span class="typeface-title" id="Altitude">Altitude</span>
+            <span class="font-masters">1 Variable Axis <br> 5 Font Masters</span>
           </div>
         </li>
         <li class="typefacesbutton">
           <div class="typeface-item">
-            <span class="typeface-title">Drafty</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
-          </div>
-        </li>
-        <li class="typefacesbutton">
-          <div class="typeface-item">
-            <span class="typeface-title">Shear</span>
-            <span class="font-masters">2 axes <br> 4 Font Masters</span>
+            <span class="typeface-title">Sleet</span>
+            <span class="font-masters">2 Variable Axes <br> 4 Font Masters</span>
           </div>
         </li>
       </ul>
@@ -69,13 +64,79 @@
 
   <div id="GlacierDetails">
     <div class="glaciercontent">
-      <div style="display: flex; grid-template-columns: 1fr 1fr; justify-content: space-between;">
+      <div style="display: flex; grid-template-columns: 1fr 1fr; justify-content: space-between; display: none;">
         <p>go back</p>
         <p>next typeface</p>
       </div>
-      <h2>Glacier</h2>
-      <p>some info here</p>
+      <br>
+      <h2>GLACIER</h2>
+      <br><br><br><br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+        <p> GLACIER is an 8-bit pixel font that interpolates between sharp peaks and caving valleys. It features a
+          truncated stem on one extreme and a taller, extended stem on the other extreme. It intepolates between a
+          display pixel font and a harsh, perilous environment. &#9968</p>
+        <p>DOWNLOAD THE .GLYPHS HERE &#8599 <br><br> DOWNLOAD THE .TTF HERE &#8599</p>
+      </div>
+      <br><br><br><br><br><br><br>
+      <h3>
+        CLIMB ICY PEAKS
+      </h3>
+      <p class="caption">AERO: 0 --- AERO: 0
+      </p>
+      <br><br><br><br>
+      <h3>
+        TRAVERSE VALLEYS
+      </h3>
+      <p class="caption">AERO: 1000 --- AERO: 0
+      </p>
+      <br><br><br><br>
+      <h3>
+        GLACIAL PLATEAUS
+      </h3>
+      <p class="caption">AERO: 0 --- AERO: 1000
+      </p>
+      <br><br><br><br>
+      <h3>
+        FRIGID CLIMATE
+      </h3>
+      <p class="caption">AERO: 1000 --- AERO: 1000
+      </p>
+      <br><br><br><br><br><br><br>
+      <p style="display: none;">IDEATION</p>
+      <br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+        <p style="font-size: 400px;">&#9968</p>
+        <p style="font-size: 400px;">&#10052</p>
+      </div>
+      <br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+        <p>FEATURES</p>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+          <p>ALL CAPS</p>
+          <p>MOLECULAR: PIXEL</p>
+          <p>DISPLAY</p>
+          <p>MONOSPACE</p>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br>
+      <h3>
+        A B C D E F G H I J K L M N O P Q R S T U V W X  Y Z 1 2 3 4 5 6 7 8 9 0 . , : ;
+      </h3>
+      <br><br><br><br><br><br><br>
+        <div style="display: flex; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div>
+            <p>TYPE TESTER</p>
+            <br><br>
+            <label for="VariableAxis">PEAK: <span id="current-PEAK">0</span></label><br><br>
+            <input name="VariableAxis" type="range" min="-500" max="500" value="0" oninput="setVariableAxis(this.value)">
+            <br><br><br><br>
+            <label for="font-size">Font Size: <span id="current-font-size">100</span>px</label><br><br>
+            <input name="font-size" type="range" min="1" max="200" value="100" oninput="setFontSize(this.value)">
+          </div>
+        <div class="typetest" contenteditable="true">Type Here...</div>
     </div>
+    </div>
+  </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
