@@ -385,11 +385,12 @@ button {
   color: var(--primarywhite);
   text-align: left;
   font-size: 15px;
-  width: 200px;
+  width: 120px;
   animation: fadeIn 2s ease-in;
   color: var(--secondarywhite);
   animation: glow 0.5s ease-in-out infinite;
   animation-delay: 2s;
+  cursor: pointer;
 }
 
 .glacier-secret-container:hover .glacier-secret {
