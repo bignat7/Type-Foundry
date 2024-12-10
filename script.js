@@ -91,6 +91,11 @@ function applyTypefaceDetails(typefaceName) {
     detail.style.display = 'none'; // Hide all typeface details
   });
 
+  var landingtext = document.querySelectorAll('.glacier-secret-container');
+  landingtext.forEach(function(label) {
+    label.style.display = 'none'; // Hide all typeface details
+  });
+
   window.scrollTo(0, 0);
   
   // Get the details section for the clicked typeface and display it
