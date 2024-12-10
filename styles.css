@@ -8,7 +8,17 @@
   --blue: #1656A4;
   --primarywhite: rgba(255, 255, 255, 0.8);
   --secondarywhite: rgba(255, 255, 255, 0.24);
-  --PEAK: 0;
+  --textwhite: rgba(255, 255, 255, 0.6);
+  --STAR: 0;
+  --HEIG: 0;
+  --CURV: 0;
+  --AERO: 0;
+  --slnt: 0;
+  --SHAP: 0;
+	--glacier-font-size: 60px;
+  --shard-font-size: 100px;
+  --altitude-font-size: 80px;
+  --sleet-font-size: 70px;
 }
 
 ::-webkit-scrollbar {
@@ -20,21 +30,91 @@
   src: url("fonts/Shard.ttf");
 }
 
+@font-face {
+  font-family: "Sleet";
+  src: url("fonts/ShearVF.ttf");
+}
+
+@font-face {
+  font-family: "Glacier";
+  src: url("fonts/DottiVF.ttf");
+}
+
+@font-face {
+  font-family: "Altitude";
+  src: url("fonts/Altitude.ttf");
+}
+
+@keyframes Glacier-animation {
+  0% {
+    font-variation-settings: "STAR" 0, "HEIG" 0;
+  }
+  20% {
+    font-variation-settings: "STAR" 0, "HEIG" 0;
+  }
+  80% {
+    font-variation-settings: "STAR" 1000, "HEIG" 1000;
+  }
+  100% {
+    font-variation-settings: "STAR" 1000, "HEIG" 1000;
+  }
+}
+
+@keyframes Shard-animation {
+  0% {
+    font-variation-settings: "CURV" 0;
+  }
+  20% {
+    font-variation-settings: "CURV" 0;
+  }
+  80% {
+    font-variation-settings: "CURV" 1000;
+  }
+  100% {
+    font-variation-settings: "CURV" 1000;
+  }
+}
+
+@keyframes Altitude-animation {
+  0% {
+    font-variation-settings: "AERO" -500;
+  }
+  100% {
+    font-variation-settings: "AERO" 500;
+  }
+}
+
+@keyframes Sleet-animation {
+  0% {
+    font-variation-settings: "slnt" 0, "SHAP" 0;
+  }
+  20% {
+    font-variation-settings: "slnt" 0, "SHAP" 0;
+  }
+  80% {
+    font-variation-settings: "slnt" 1000, "SHAP" 1000;
+  }
+  100% {
+    font-variation-settings: "slnt" 1000, "SHAP" 1000;
+  }
+}
+
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-variation-settings: "CURV" 0;
+  font-family: 'Sleet', Arial, sans-serif;
+  font-variation-settings: "SHAP" 0;
   background-color: var(--blue);
+  text-transform: uppercase;
 }
 
 .navbar {
   display: flex;
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: transparent;
   padding: 20px;
   gap: 20px;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
 }
 
 ul {
@@ -60,6 +140,9 @@ a {
   background-size: cover;
   opacity: 0.5;
   transition: 0.3s;
+  font-family: "Sleet";
+  text-transform: uppercase;
+  line-height: 1.4em;
 }
 
 .navbutton:hover {
@@ -69,6 +152,7 @@ a {
 
 .navbuttonactive {
   text-decoration: none;
+  text-transform: uppercase;
   color: var(--blue);
   padding: 8px 15px;
   text-align: center;
@@ -77,12 +161,13 @@ a {
   background-image: url('images/iceberg button.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  text-transform: uppercase;
+  line-height: 1.4em;
 }
 
 .typefacesnavcontainer {
   display: flex;
   flex-direction: row;
-  /* Arrange items horizontally */
   width: 100%;
 }
 
@@ -93,9 +178,8 @@ a {
   left: 0;
   width: 580px;
   transform: translateX(-110%);
-  /* ChatGPT helped with this transition */
   transition: transform 0.3s ease;
-  z-index: 100;
+  z-index: 102;
   height: 95%;
   background-image: url('images/iceberg nav.svg');
   background-repeat: no-repeat;
@@ -126,7 +210,7 @@ a {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  z-index: 99;
+  z-index: 100;
   overflow-y: auto;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -231,9 +315,9 @@ button {
 
 .landingbg {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  margin-top: -10px;
+  margin-top: 55px;
   animation: fadeIn 2s ease-in;
   justify-self: center;
   transition: filter 0.2s ease;
@@ -276,46 +360,251 @@ button {
   animation: fadeOut 3s ease-in;
 }
 
-#GlacierDetails {
+.typefacedetails {
   position: absolute;
   z-index: 70;
-  padding: 80px 200px;
+  padding: 220px 200px;
   margin: 20px;
   display: none;
-  background-image: url('images/tundra details.png');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   width: calc(100% - 40px);
-  height: 430%;
+  height: 100%;
 }
 
 .glaciercontent {
   color: var(--primarywhite);
   width: 100%;
   text-align: left;
+  font-family: 'Glacier', Arial, sans-serif;
+  transition: font-variation-settings 0.3s ease;
+  animation-name: Glacier-animation;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  line-height: 1.5em;
+}
+
+.shardcontent {
+  color: var(--primarywhite);
+  width: 100%;
+  text-align: left;
+  font-family: 'Shard', Arial, sans-serif;
+  transition: font-variation-settings 0.3s ease;
+  animation-name: Shard-animation;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  line-height: 1.5em;
+}
+
+.altitudecontent {
+  color: var(--primarywhite);
+  width: 100%;
+  text-align: left;
+  font-family: 'Altitude', Arial, sans-serif;
+  text-transform: uppercase;
+  transition: font-variation-settings 0.3s ease;
+  animation-name: Altitude-animation;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  line-height: 1.5em;
+}
+
+.sleetcontent {
+  color: var(--primarywhite);
+  width: 100%;
+  text-align: left;
+  font-family: 'Sleet', Arial, sans-serif;
+  text-transform: uppercase;
+  transition: font-variation-settings 0.3s ease;
+  animation-name: Sleet-animation;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  line-height: 1.5em;
 }
 
 h2 {
   font-weight: normal;
   font-size: 15vw;
+  text-align: center;
 }
 
 h3 {
   font-weight: normal;
   text-align: center;
-  font-size: max(30px, 6vw);
+  font-size: max(40px, 6vw);
 }
 
 p {
-  font-size: 20px;
+  font-size: 14px;
+  color: var(--textwhite);
+  font-family: Arial;
+  text-transform: none;
 }
 
 .caption {
   text-align: center;
   font-size: 15px;
-  color: var(--blue);
+  color: var(--secondarywhite);
   font-weight: bold;
 }
+
+.alphabetgrid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr); 
+  grid-template-rows: repeat(3, 1fr);  
+  z-index: 90;
+  row-gap: 100px;
+  font-size: max(50px, 7vw);
+}
+
+.alphabetgrid > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  text-align: center;
+}
+
+.Glaciertypetester {
+  display: block;
+  font-family: 'Glacier';
+  font-variation-settings: "STAR" var(--STAR), "HEIG" var(--HEIG);
+  font-size: var(--glacier-font-size);
+  color: var(--primarywhite);
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  padding: 20px; 
+  background-color: var(--secondarywhite);
+  transition: none;
+  animation-name: none;
+  line-height: 1.5em;
+  margin-top: 30px;
+}
+
+.Shardtypetester {
+  display: block;
+  font-family: 'Shard';
+  font-variation-settings: 'CURV' var(--CURV);
+  font-size: var(--shard-font-size);
+  color: var(--primarywhite);
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  padding: 20px; 
+  background-color: var(--secondarywhite);
+  transition: none;
+  animation-name: none;
+  line-height: 1.5em;
+  margin-top: 30px;
+}
+
+.Altitudetypetester {
+  display: block;
+  font-family: 'Altitude';
+  font-variation-settings: 'AERO' var(--AERO);
+  font-size: var(--altitude-font-size);
+  color: var(--primarywhite);
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  padding: 20px; 
+  background-color: var(--secondarywhite);
+  transition: none;
+  animation-name: none;
+  line-height: 1.5em;
+  margin-top: 30px;
+}
+
+.Sleettypetester {
+  display: block;
+  font-family: 'Sleet';
+  font-variation-settings: 'slnt' var(--slnt), 'SHAP' var(--SHAP);
+  font-size: var(--sleet-font-size);
+  color: var(--primarywhite);
+  width: 100%;
+  min-height: 400px;
+  height: 100%;
+  padding: 20px; 
+  background-color: var(--secondarywhite);
+  transition: none;
+  animation-name: none;
+  line-height: 1.5em;
+  margin-top: 30px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  outline: none;
+  background-color: var(--secondarywhite);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 20px;
+  background: var(--primarywhite);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 5px;
+  height: 20px;
+  background: var(--primarywhite);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 20px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: var(--primarywhite);
+}
+
+#go-back {
+  background: transparent;
+  height: 100vw;
+  width: 30%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: none;
+}
+
+#go-back:hover {
+  cursor: crosshair;
+}
+
+#next-typeface {
+  background: transparent;
+  height: 100vw;
+  width: 30%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  display: none;
+}
+
+#next-typeface:hover {
+  cursor: crosshair;
+}
+
+#GlacierDetails.active #go-back,
+#GlacierDetails.active #next-typeface {
+  display: block; /* Show only when GlacierDetails is active */
+}
+
 
 @media (max-width: 800px) {
 

@@ -54,7 +54,6 @@ var granimInstance = new Granim({
   }
 });
 
-// animated background gradient jQuery
 $('#default-state-cta').on('click', function (event) {
   event.preventDefault();
   granimInstance.changeState('default-state');
@@ -76,33 +75,94 @@ function setClass(element) {
   $(element).addClass('active');
 };
 
-// function that toggles typefacesnav and shows typefacedetails
-function handleTypefaceClick() {
-  toggleTypefaces();
-  applyGlacierDetails();
+// hides typefacesnav and shows typefacedetails
+function handleTypefaceClick(typefaceName) {
+  toggleTypefaces(); // Toggle visibility (if necessary)
+  applyTypefaceDetails(typefaceName); // Apply details for the selected typeface
 }
 
-// function that defines showtypefacedetails
-function applyGlacierDetails() {
-  var landingbg = document.getElementById('landingbg'); 
-  var GlacierDetails = document.getElementById('GlacierDetails');
+// ChatGPT helped me apply this function to any typeface instead of just a specific one
+function applyTypefaceDetails(typefaceName) {
+  var landingbg = document.getElementById('landingbg');
+  
+  // Get all elements with the class 'typefaceDetails' and hide them
+  var allTypefaceDetails = document.querySelectorAll('.typefacedetails');
+  allTypefaceDetails.forEach(function(detail) {
+    detail.style.display = 'none'; // Hide all typeface details
+  });
 
-  landingbg.style.filter = 'blur(5px)';
-
-  GlacierDetails.style.display = 'block'; 
+  window.scrollTo(0, 0);
+  
+  // Get the details section for the clicked typeface and display it
+  var typefaceDetails = document.getElementById(typefaceName + 'Details');
+  if (typefaceDetails) {
+    landingbg.style.filter = 'blur(10px)'; // Apply the blur to the background
+    typefaceDetails.style.display = 'block'; // Show the new typeface details
+  }
 }
 
-// type tester
-var currentVariable = document.querySelector('#current-PEAK');
-function setVariable(newVariable) {
-    console.log(newVariable);
-    currentVariable.innerText = newVariable;
-    root.style.setProperty('--PEAK', newVariable);
+// Glacier type tester
+var root = document.querySelector('html');
+var currentSTAR = document.querySelector('#current-STAR');
+var currentHEIG = document.querySelector('#current-HEIG');
+var currentGlacierFontSize = document.querySelector('#current-glacier-font-size');
+
+function setSTAR(newSTAR) {
+    currentSTAR.innerText = newSTAR;
+    root.style.setProperty('--STAR', newSTAR);
+}
+function setGlacierFontSize(newGlacierFontSize) {
+    currentGlacierFontSize.innerText = newGlacierFontSize;
+    root.style.setProperty('--glacier-font-size', newGlacierFontSize + 'px');
+}
+function setHEIG(newHEIG) {
+  currentHEIG.innerText = newHEIG;
+  root.style.setProperty('--HEIG', newHEIG);
 }
 
-var currentFontSize = document.querySelector('#current-font-size');
-function setFontSize(newFontSize) {
-    console.log(newFontSize);
-    currentFontSize.innerText = newFontSize;
-    root.style.setProperty('--font-size', newFontSize + "px");
+// Shard type tester
+var root = document.querySelector('html');
+var currentCURV = document.querySelector('#current-CURV');
+var currentShardFontSize = document.querySelector('#current-shard-font-size');
+
+function setCURV(newCURV) {
+    currentCURV.innerText = newCURV;
+    root.style.setProperty('--CURV', newCURV);
+}
+function setShardFontSize(newShardFontSize) {
+    currentShardFontSize.innerText = newShardFontSize;
+    root.style.setProperty('--shard-font-size', newShardFontSize + 'px');
+}
+
+// Altitude type tester
+var root = document.querySelector('html');
+var currentAERO = document.querySelector('#current-AERO');
+var currentAltitudeFontSize = document.querySelector('#current-altitude-font-size');
+
+function setAERO(newAERO) {
+    currentAERO.innerText = newAERO;
+    root.style.setProperty('--AERO', newAERO);
+}
+function setAltitudeFontSize(newAltitudeFontSize) {
+    currentAltitudeFontSize.innerText = newAltitudeFontSize;
+    root.style.setProperty('--altitude-font-size', newAltitudeFontSize + 'px');
+}
+
+// Sleet type tester
+var root = document.querySelector('html');
+var currentSLNT = document.querySelector('#current-SLNT');
+var currentSHAP = document.querySelector('#current-SHAP');
+var currentSleetFontSize = document.querySelector('#current-sleet-font-size');
+
+function setSLNT(newSLNT) {
+    currentSLNT.innerText = newSLNT;
+    root.style.setProperty('--slnt', newSLNT);
+}
+function setSleetFontSize(newSleetFontSize) {
+    currentSleetFontSize.innerText = newSleetFontSize;
+    root.style.setProperty('--sleet-font-size', newSleetFontSize + 'px');
+}
+function setSHAP(newSHAP) {
+  currentSHAP.innerText = newSHAP;
+  root.style.setProperty('--SHAP', newSHAP);
 }

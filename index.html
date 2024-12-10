@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Typeface Showcase</title>
+  <title>Tundra Type</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,36 +12,38 @@
   <ul class="navbar">
     <li style="margin-right: auto;"><a href="index.html" class="navbutton">Home</a></li>
     <li><button class="navbutton" onclick="toggleTypefaces()">Typefaces</button></li>
-    <li><a href="Resources/index.html" class="navbutton">Resources</a></li>
+    <li><a href="Resources/index.html" class="navbutton" style="display: none;">Resources</a></li>
     <li><a href="About Us/index.html" class="navbutton">About Tundra Type</a></li>
   </ul>
+
   <div id="overlay"></div>
-
-
-
   <div class="typefacesnavcontainer">
     <div id="typefacesnav">
       <ul class="typefacesnavtypefaces">
         <li class="typefacesbutton" style="border-top: 0.5px solid var(--primarywhite);"
           onclick="handleTypefaceClick('Glacier')">
           <div class="typeface-item">
-            <span class="typeface-title" id="Glacier">Glacier</span>
+            <span class="typeface-title" style="font-family: 'Glacier'; font-variation-settings: 'STAR' 1000, 'HEIG' 0;"
+              id="Glacier">Glacier</span>
             <span class="font-masters">2 Variable Axes <br> 4 Font Masters</span>
           </div>
         </li>
-        <li class="typefacesbutton" onclick="toggleTypefaces()">
+        <li class="typefacesbutton" onclick="handleTypefaceClick('Shard')">
           <div class="typeface-item">
-            <span class="typeface-title" id="Shard">Shard</span>
+            <span class="typeface-title"
+              style="font-family: 'Shard'; font-variation-settings: 'CURV' 1000; font-size: 60px;"
+              id="Shard">Shard</span>
             <span class="font-masters">1 Variable Axis <br> 2 Font Masters</span>
           </div>
         </li>
-        <li class="typefacesbutton" onclick="toggleTypefaces()">
+        <li class="typefacesbutton" onclick="handleTypefaceClick('Altitude')">
           <div class="typeface-item">
-            <span class="typeface-title" id="Altitude">Altitude</span>
+            <span class="typeface-title" style="font-family: 'Altitude'; font-variation-settings: 'AERO' 0;"
+              id="Altitude">Altitude</span>
             <span class="font-masters">1 Variable Axis <br> 5 Font Masters</span>
           </div>
         </li>
-        <li class="typefacesbutton">
+        <li class="typefacesbutton" onclick="handleTypefaceClick('Sleet')">
           <div class="typeface-item">
             <span class="typeface-title">Sleet</span>
             <span class="font-masters">2 Variable Axes <br> 4 Font Masters</span>
@@ -62,88 +64,447 @@
     welcome to the tundra.
   </div>
 
-  <div id="GlacierDetails">
+  <div id="GlacierDetails" class="typefacedetails">
     <div class="glaciercontent">
       <div style="display: flex; grid-template-columns: 1fr 1fr; justify-content: space-between; display: none;">
         <p>go back</p>
         <p>next typeface</p>
       </div>
-      <br>
-      <h2>GLACIER</h2>
-      <br><br><br><br>
+      <h2>Glacier</h2>
+      <br><br><br><br><br><br><br>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
-        <p> GLACIER is an 8-bit pixel font that interpolates between sharp peaks and caving valleys. It features a
-          truncated stem on one extreme and a taller, extended stem on the other extreme. It intepolates between a
-          display pixel font and a harsh, perilous environment. &#9968</p>
-        <p>DOWNLOAD THE .GLYPHS HERE &#8599 <br><br> DOWNLOAD THE .TTF HERE &#8599</p>
+        <div>
+          <p style="line-height: 1.2em;"> GLACIER is a 7-bit pixel font that interpolates between sharp peaks and caving
+            valleys. It features a
+            truncated stem on one extreme and a taller, extended stem on the other extreme. <br>It intepolates between a
+            display pixel font and a harsh, perilous environment.</p>
+        </div>
+        <div>
+          <a href="fonts/Dotti.glyphs" download style="font-size: 20px;">DOWNLOAD THE .GLYPHS HERE &#8599
+          </a>
+          <br><br>
+          <a href="fonts/DottiVF.ttf" download style="font-size: 20px;">DOWNLOAD THE .TTF HERE &#8599
+          </a>
+        </div>
       </div>
       <br><br><br><br><br><br><br>
-      <h3>
+      <h3 style="font-variation-settings: 'STAR' 0, 'HEIG' 0;" contenteditable="true">
         CLIMB ICY PEAKS
       </h3>
-      <p class="caption">AERO: 0 --- AERO: 0
+      <br><br>
+      <p class="caption">STAR: 0 --- HEIG: 0
       </p>
       <br><br><br><br>
-      <h3>
+      <h3 style="font-variation-settings: 'STAR' 1000, 'HEIG' 0;" contenteditable="true">
         TRAVERSE VALLEYS
       </h3>
-      <p class="caption">AERO: 1000 --- AERO: 0
+      <br><br>
+      <p class="caption">STAR: 1000 --- HEIG: 0
       </p>
       <br><br><br><br>
-      <h3>
+      <h3 style="font-variation-settings: 'STAR' 0, 'HEIG' 1000;" contenteditable="true">
         GLACIAL PLATEAUS
       </h3>
-      <p class="caption">AERO: 0 --- AERO: 1000
+      <br><br>
+      <p class="caption">STAR: 0 --- HEIG: 1000
       </p>
       <br><br><br><br>
-      <h3>
+      <h3 style="font-variation-settings: 'STAR' 1000, 'HEIG' 1000;" contenteditable="true">
         FRIGID CLIMATE
       </h3>
-      <p class="caption">AERO: 1000 --- AERO: 1000
+      <br><br>
+      <p class="caption">STAR: 1000 --- HEIG: 1000
       </p>
       <br><br><br><br><br><br><br>
       <p style="display: none;">IDEATION</p>
       <br>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+      <div
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px; align-items: center; justify-content: center;">
         <p style="font-size: 400px;">&#9968</p>
         <p style="font-size: 400px;">&#10052</p>
       </div>
-      <br>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
-        <p>FEATURES</p>
-        <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-          <p>ALL CAPS</p>
-          <p>MOLECULAR: PIXEL</p>
-          <p>DISPLAY</p>
-          <p>MONOSPACE</p>
-        </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="alphabetgrid">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div>M</div>
+        <div>N</div>
+        <div>O</div>
+        <div>P</div>
+        <div>Q</div>
+        <div>R</div>
+        <div>S</div>
+        <div>T</div>
+        <div>U</div>
+        <div>V</div>
+        <div>W</div>
+        <div>X</div>
+        <div>Y</div>
+        <div>Z</div>
+        <div>.</div>
       </div>
       <br><br><br><br><br><br><br>
-      <h3>
-        A B C D E F G H I J K L M N O P Q R S T U V W X  Y Z 1 2 3 4 5 6 7 8 9 0 . , : ;
-      </h3>
-      <br><br><br><br><br><br><br>
-        <div style="display: flex; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <div>
-            <p>TYPE TESTER</p>
-            <br><br>
-            <label for="VariableAxis">PEAK: <span id="current-PEAK">0</span></label><br><br>
-            <input name="VariableAxis" type="range" min="-500" max="500" value="0" oninput="setVariableAxis(this.value)">
-            <br><br><br><br>
-            <label for="font-size">Font Size: <span id="current-font-size">100</span>px</label><br><br>
-            <input name="font-size" type="range" min="1" max="200" value="100" oninput="setFontSize(this.value)">
-          </div>
-        <div class="typetest" contenteditable="true">Type Here...</div>
+      <div style="display: flex; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 150px;">
+        <p>TYPE TESTER</p>
+        <div>
+          <label for="STAR">
+            <p>STAR: <span id="current-STAR"> 0</span></p>
+          </label>
+          <input name="STAR" type="range" min="0" max="1000" value="0" oninput="setSTAR(this.value)">
+        </div>
+
+        <div>
+          <label for="HEIG">
+            <p>HEIG: <span id="current-HEIG"> 0</span></p>
+          </label>
+          <input name="HEIG" type="range" min="0" max="1000" value="0" oninput="setHEIG(this.value)">
+        </div>
+
+        <div>
+          <label for="font-size">
+            <p>FONT SIZE: <span id="current-glacier-font-size">
+              </span> px</p>
+          </label>
+          <input name="font-size" type="range" min="20" max="150" value="60" oninput="setGlacierFontSize(this.value)">
+        </div>
+
+      </div>
+      <div class="Glaciertypetester" contenteditable="plaintext-only">Type Here...</div>
     </div>
+    <br><br><br><br>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; justify-content: space-between;">
+      <p>previous typeface</p>
+      <p style="text-align: right;">next typeface</p>
     </div>
-  </div>
+    <br><br><br><br>
   </div>
 
+  <div id="ShardDetails" class="typefacedetails">
+    <div class="shardcontent">
+      <h2 style="font-size: 20vw;">shard</h2>
+      <br><br><br><br><br><br><br><br><br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+        <div>
+          <p style="line-height: 1.2em;"> Shard is an all-lowercase typeface so sharp it can cut through ice. Inspired
+            by Dirtyline Studio’s Wagon typeface, it is a high-contrast geometric display font that treks the extremes.
+          </p>
+        </div>
+        <div>
+          <a href="fonts/Shard.glyphs" download style="font-size: 20px;">DOWNLOAD THE .GLYPHS HERE &#8599
+          </a>
+          <br><br>
+          <a href="fonts/Shard.ttf" download style="font-size: 20px;">DOWNLOAD THE .TTF HERE &#8599
+          </a>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'CURV' 0; font-size: 8vw;" contenteditable="true">
+        sharp as glass
+      </h3>
+      <br><br>
+      <p class="caption">CURV: 0
+      </p>
+      <br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'CURV' 1000; font-size: 8vw;" contenteditable="true">
+        crystal clear
+      </h3>
+      <br><br>
+      <p class="caption">CURV: 1000
+      </p>
+      <br><br><br><br><br><br><br><br><br><br>
+      <div
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px; align-items: center; justify-content: center;">
+        <p style="font-size: 400px;">&#10022</p>
+        <p style="font-size: 400px;">&#10023</p>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="alphabetgrid">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div>M</div>
+        <div>N</div>
+        <div>O</div>
+        <div>P</div>
+        <div>Q</div>
+        <div>R</div>
+        <div>S</div>
+        <div>T</div>
+        <div>U</div>
+        <div>V</div>
+        <div>W</div>
+        <div>X</div>
+        <div>Y</div>
+        <div>Z</div>
+        <div>.</div>
+      </div>
+      <br><br><br><br><br><br><br>
+      <div style="display: flex; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 150px;">
+        <p>TYPE TESTER</p>
+        <div>
+          <label for="CURV">
+            <p>CURV: <span id="current-CURV"> 0</span></p>
+          </label>
+          <input name="CURV" type="range" min="0" max="1000" value="0" oninput="setCURV(this.value)">
+        </div>
+
+        <div>
+          <label for="font-size">
+            <p>FONT SIZE: <span id="current-shard-font-size">
+              </span> px</p>
+          </label>
+          <input name="font-size" type="range" min="20" max="150" value="60" oninput="setShardFontSize(this.value)">
+        </div>
+      </div>
+      <div class="Shardtypetester" contenteditable="plaintext-only">Type Here...</div>
+    </div>
+    <br><br><br><br>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; justify-content: space-between;">
+      <p>previous typeface</p>
+      <p style="text-align: right;">next typeface</p>
+    </div>
+    <br><br><br><br>
+  </div>
+
+  <div id="AltitudeDetails" class="typefacedetails">
+    <div class="altitudecontent">
+      <h2>ALTITUDE</h2>
+      <br><br><br><br><br><br><br><br><br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+        <div>
+          <p style="line-height: 1.2em;"> Altitude is an all-caps pictogram font that captures the thrill of velocity and flight. Made for skyward designers, whimsical wayfarers, and creative jetsetters. Inspired by aircraft aerodynamics, Altitude is crafted in reference to aircraft modules. <br>It includes letters with laminar as well as turbulent flow.
+          </p>
+        </div>
+        <div>
+          <a href="fonts/Altitude.glyphs" download style="font-size: 25px;">DOWNLOAD THE .GLYPHS HERE &#8599
+          </a>
+          <br><br>
+          <a href="fonts/Altitude.ttf" download style="font-size: 25px;">DOWNLOAD THE .TTF HERE &#8599
+          </a>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'AERO' -500;" contenteditable="true">
+        PUSH ALTITUDE LIMITS
+      </h3>
+      <br><br>
+      <p class="caption">AERO: -500
+      </p>
+      <br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'AERO' 0;" contenteditable="true">
+        BREAK SOUND BARRIERS
+      </h3>
+      <br><br>
+      <p class="caption">AERO: 0
+      </p>
+      <br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'AERO' 500;" contenteditable="true">
+        THE FUTURE IS FAST
+      </h3>
+      <br><br>
+      <p class="caption">AERO: 500
+      </p>
+      <br><br><br><br><br><br><br><br><br><br>
+      <div
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px; align-items: center; justify-content: center;">
+        <p style="font-size: 400px;">&#10022</p>
+        <p style="font-size: 400px;">&#10023</p>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="alphabetgrid">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div>M</div>
+        <div>N</div>
+        <div>O</div>
+        <div>P</div>
+        <div>Q</div>
+        <div>R</div>
+        <div>S</div>
+        <div>T</div>
+        <div>U</div>
+        <div>V</div>
+        <div>W</div>
+        <div>X</div>
+        <div>Y</div>
+        <div>Z</div>
+        <div>.</div>
+      </div>
+      <br><br><br><br><br><br><br>
+      <div style="display: flex; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 150px;">
+        <p>TYPE TESTER</p>
+        <div>
+          <label for="AERO">
+            <p>AERO: <span id="current-AERO"> 0</span></p>
+          </label>
+          <input name="AERO" type="range" min="-500" max="500" value="0" oninput="setAERO(this.value)">
+        </div>
+
+        <div>
+          <label for="font-size">
+            <p>FONT SIZE: <span id="current-altitude-font-size">
+              </span> px</p>
+          </label>
+          <input name="font-size" type="range" min="20" max="150" value="80" oninput="setAltitudeFontSize(this.value)">
+        </div>
+      </div>
+      <div class="Altitudetypetester" contenteditable="plaintext-only">Type Here...</div>
+    </div>
+    <br><br><br><br>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; justify-content: space-between;">
+      <p>previous typeface</p>
+      <p style="text-align: right;">next typeface</p>
+    </div>
+    <br><br><br><br>
+  </div>
+
+  <div id="SleetDetails" class="typefacedetails">
+    <div class="sleetcontent">
+      <h2 style="font-size: 13vw">SLEET</h2>
+      <br><br><br><br><br><br><br><br><br>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px">
+        <div>
+          <p style="line-height: 1.2em;"> Info about Sleet here.
+          </p>
+        </div>
+        <div>
+          <a href="fonts/ShearVF.glyphs" download style="font-size: 20px;">DOWNLOAD THE <br>.GLYPHS HERE &#8599
+          </a>
+          <br><br>
+          <a href="fonts/ShearVF.ttf" download style="font-size: 20px;">DOWNLOAD THE <br>.TTF HERE &#8599
+          </a>
+        </div>
+      </div>
+      <br><br><br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'slnt' 0, 'SHAP' 0;" contenteditable="true">
+        PUSH ALTITUDE LIMITS
+      </h3>
+      <br><br>
+      <p class="caption">SLNT: 0 --- SHAP: 0
+      </p>
+      <br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'slnt' 1000, 'SHAP' 0;" contenteditable="true">
+        BREAK SOUND BARRIERS
+      </h3>
+      <br><br>
+      <p class="caption">SLNT: 1000 --- SHAP: 0
+      </p>
+      <br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'slnt' 0, 'SHAP' 1000;" contenteditable="true">
+        THE FUTURE IS FAST
+      </h3>
+      <br><br>
+      <p class="caption">SLNT: 0 --- SHAP: 1000
+      </p>
+      <br><br><br><br><br><br>
+      <h3 style="font-variation-settings: 'slnt' 1000, 'SHAP' 1000;" contenteditable="true">
+        THE FUTURE IS FAST
+      </h3>
+      <br><br>
+      <p class="caption">SLNT: 1000 --- SHAP: 1000
+      </p>
+      <br><br><br><br><br><br><br><br><br><br>
+      <div
+        style="display: grid; grid-template-columns: 1fr 1fr; gap: 200px; align-items: center; justify-content: center;">
+        <p style="font-size: 400px;">&#10022</p>
+        <p style="font-size: 400px;">&#10023</p>
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="alphabetgrid" style="font-size: 6vw;">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>I</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div>M</div>
+        <div>N</div>
+        <div>O</div>
+        <div>P</div>
+        <div>Q</div>
+        <div>R</div>
+        <div>S</div>
+        <div>T</div>
+        <div>U</div>
+        <div>V</div>
+        <div>W</div>
+        <div>X</div>
+        <div>Y</div>
+        <div>Z</div>
+        <div>.</div>
+      </div>
+      <br><br><br><br><br><br><br>
+      <div style="display: flex; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 150px;">
+        <p>TYPE TESTER</p>
+        <div>
+          <label for="SLNT">
+            <p>SLNT: <span id="current-SLNT"> 0</span></p>
+          </label>
+          <input name="SLNT" type="range" min="0" max="1000" value="0" oninput="setSLNT(this.value)">
+        </div>
+
+        <div>
+          <label for="SHAP">
+            <p>SHAP: <span id="current-SHAP"> 0</span></p>
+          </label>
+          <input name="SHAP" type="range" min="0" max="1000" value="0" oninput="setSHAP(this.value)">
+        </div>
+
+        <div>
+          <label for="font-size">
+            <p>FONT SIZE: <span id="current-sleet-font-size">
+              </span> px</p>
+          </label>
+          <input name="font-size" type="range" min="20" max="150" value="60" oninput="setSleetFontSize(this.value)">
+        </div>
+
+      </div>
+      <div class="Sleettypetester" contenteditable="plaintext-only">Type Here...</div>
+    </div>
+    <br><br><br><br>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; justify-content: space-between;">
+      <p>previous typeface</p>
+      <p style="text-align: right;">next typeface</p>
+    </div>
+    <br><br><br><br>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="script.js"></script>
 </body>
-
-
-
 </html>
