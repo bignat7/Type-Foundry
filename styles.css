@@ -373,27 +373,6 @@ button {
   animation: fadeOut 3s ease-in;
 }
 
-.landingtextbody {
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  color: var(--primarywhite);
-  text-align: left;
-  font-size: 15px;
-  animation: fadeIn 2s ease-in;
-  transition: filter 0.2s ease;
-}
-
-.landingtextbodytext {
-  position: relative; /* Prevent unintended layout shifts */
-}
-
-.landingtextbodytext:hover {
-  animation: wiggle 0.5s ease-in-out infinite;
-}
-
 .glacier-secret {
   opacity: 0;
   font-size: 15px;
@@ -627,45 +606,20 @@ input[type="range"]:hover::-webkit-slider-thumb {
   background-color: var(--primarywhite);
 }
 
-#go-back {
-  background: transparent;
-  height: 100vw;
-  width: 30%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  display: none;
-}
-
-#go-back:hover {
-  cursor: crosshair;
-}
-
-#next-typeface {
-  background: transparent;
-  height: 100vw;
-  width: 30%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 99;
-  display: none;
-}
-
-#next-typeface:hover {
-  cursor: crosshair;
-}
-
-#GlacierDetails.active #go-back,
-#GlacierDetails.active #next-typeface {
-  display: block; /* Show only when GlacierDetails is active */
-}
-
 .about-us {
   color: var(--primarywhite);
   display: flex;
   justify-content: center;
   margin: 200px;
   line-height: 1.5em;
+}
+
+
+
+@media (max-width: 800px) {
+  
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  
 }
