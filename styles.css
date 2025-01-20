@@ -687,3 +687,37 @@ input[type="range"]:hover::-webkit-slider-thumb {
   }
 
 }
+
+.desktop-notice {
+  display: none;
+  
+}
+
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: var(--primarywhite);
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Sleet";
+  text-transform: uppercase;
+}
+
+.mobile-overlay.active {
+  display: flex;
+}
+
+@media (max-width: 599px) {
+  .mobile-overlay {
+      display: flex;
+  }
+}
