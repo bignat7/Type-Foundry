@@ -695,6 +695,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
 
 .mobile-overlay {
   display: none;
+  visibility: hidden;
   position: fixed;
   padding: 30px;
   top: 0;
@@ -713,12 +714,9 @@ input[type="range"]:hover::-webkit-slider-thumb {
   text-transform: uppercase;
 }
 
-.mobile-overlay.active {
-  display: flex;
-}
-
 @media (max-width: 599px) {
   .mobile-overlay {
       display: flex;
+      visibility: visible;
   }
 }
