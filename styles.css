@@ -696,6 +696,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
 .mobile-overlay {
   display: none;
   position: fixed;
+  padding: 30px;
   top: 0;
   left: 0;
   width: 100%;
